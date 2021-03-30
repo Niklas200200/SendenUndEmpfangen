@@ -1,0 +1,7 @@
+C:\Users\Nikla\source\repos\SendenUndEmpfangen\SendenUndEmpfangen\bin\Debug\SendenUndEmpfangen.exe.config
+C:\Users\Nikla\source\repos\SendenUndEmpfangen\SendenUndEmpfangen\bin\Debug\SendenUndEmpfangen.exe
+C:\Users\Nikla\source\repos\SendenUndEmpfangen\SendenUndEmpfangen\bin\Debug\SendenUndEmpfangen.pdb
+C:\Users\Nikla\source\repos\SendenUndEmpfangen\SendenUndEmpfangen\obj\Debug\SendenUndEmpfangen.csprojAssemblyReference.cache
+C:\Users\Nikla\source\repos\SendenUndEmpfangen\SendenUndEmpfangen\obj\Debug\SendenUndEmpfangen.csproj.CoreCompileInputs.cache
+C:\Users\Nikla\source\repos\SendenUndEmpfangen\SendenUndEmpfangen\obj\Debug\SendenUndEmpfangen.exe
+C:\Users\Nikla\source\repos\SendenUndEmpfangen\SendenUndEmpfangen\obj\Debug\SendenUndEmpfangen.pdb
