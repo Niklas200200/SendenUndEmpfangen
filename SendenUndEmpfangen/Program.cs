@@ -17,10 +17,8 @@ namespace SendenUndEmpfangen
             Server s = new Server();
            
 
-            s.starteServer();
-            //c.starteClient();
-
-
+            s.Start();
+            
 
         }       
     }  

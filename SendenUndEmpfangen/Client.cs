@@ -25,29 +25,33 @@ namespace SendenUndEmpfangen
             // Setze TTL
             socket.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.MulticastTimeToLive, TTL);
         }
-
-        public void starteClient()
+        public Task StarteClient()
         {
-            try
-            {
-                while (true)
+            return Task.Run(async () => { 
+                try
                 {
 
-                    // Eingabe der Konsole lesen
-                    Console.Write("Schreibe eine Nachricht: ");
-                    var text = Console.ReadLine();
-                    // Kodiere den Text zu einer Bytesequenz
-                    var textBytes = Encoding.ASCII.GetBytes(text);
-                    // Generiere Zielendpunkt
-                    var endPoint = new IPEndPoint(destAddr, destPort);
-                    // Sende die kodierte Nachricht als UDP-Paket
-                    socket.SendTo(textBytes, 0, textBytes.Length, SocketFlags.None, endPoint);
+                    int tries = 5;
+                    while (tries > 0)
+                    {
+                        // Eingabe der Konsole lesen
+                        Console.Write("Schreibe eine Nachricht: ");
+                        // Kodiere den Text zu einer Bytesequenz
+                        var textBytes = Encoding.ASCII.GetBytes("HALLO, JEMAND DA?");
+                        // Generiere Zielendpunkt
+                        var endPoint = new IPEndPoint(destAddr, destPort);
+                        // Sende die kodierte Nachricht als UDP-Paket
+                        socket.SendTo(textBytes, 0, textBytes.Length, SocketFlags.None, endPoint);
+                        //socket.ReceiveFrom(); // Hier wird die Antwort vom Server gesendet
+                        await Task.Delay(1000);
+                        tries--;
+                    }
                 }
-            }
-            finally
-            {
-                socket.Close();
-            }
+                finally
+                {
+                    socket.Close();
+                }
+            });
         }
 
     }

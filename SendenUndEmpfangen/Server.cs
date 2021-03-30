@@ -34,8 +34,15 @@ namespace SendenUndEmpfangen
             var receivePoint = new IPEndPoint(IPAddress.Any, 0);
             var tempReceivePoint = (EndPoint)receivePoint;
         }
-    
-        public void starteServer()
+
+        public void Start()
+        {
+            var thread = new System.Threading.Thread(new System.Threading.ThreadStart(StarteServer)) { 
+                IsBackground = true
+            };
+            thread.Start();
+        }
+        void StarteServer()
         {
             var receivePoint = new IPEndPoint(IPAddress.Any, 0);
             var tempReceivePoint = (EndPoint)receivePoint;
